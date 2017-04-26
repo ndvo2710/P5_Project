@@ -1379,7 +1379,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[252]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1393,6 +1393,7 @@ $( document ).ready(code_toggle);
 
 <span class="kn">from</span> <span class="nn">feature_format</span> <span class="kn">import</span> <span class="n">featureFormat</span><span class="p">,</span> <span class="n">targetFeatureSplit</span>
 <span class="kn">from</span> <span class="nn">tester</span> <span class="kn">import</span> <span class="n">dump_classifier_and_data</span>
+<span class="kn">from</span> <span class="nn">tester</span> <span class="kn">import</span> <span class="n">test_classifier</span>
 </pre></div>
 
 </div>
@@ -1402,7 +1403,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[253]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### Task 1: Select what features you&#39;ll use.</span>
@@ -1422,7 +1423,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[254]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1447,11 +1448,12 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[255]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
@@ -1464,7 +1466,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[256]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1494,7 +1496,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[257]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1553,7 +1555,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[258]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1568,7 +1570,7 @@ LIST OF FEATURES OVERVIEW:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[258]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1746,7 +1748,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[259]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1762,7 +1764,7 @@ LIST OF FEATURES OVERVIEW:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[259]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1911,7 +1913,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[260]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -1926,7 +1928,7 @@ LIST OF FEATURES OVERVIEW:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[260]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[42]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -2199,7 +2201,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[261]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="p">:</span>
@@ -2213,7 +2215,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[262]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -2229,7 +2231,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[263]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -2262,7 +2264,7 @@ LIST OF FEATURES OVERVIEW:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[264]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -3575,7 +3577,7 @@ In order to check whether what I believe is right or wrong, I created a function
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[265]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">visualise_pair_features</span><span class="p">(</span><span class="n">feature1</span><span class="p">,</span> <span class="n">feature2</span><span class="p">,</span> <span class="n">fig_name</span><span class="p">):</span>
@@ -3602,7 +3604,7 @@ In order to check whether what I believe is right or wrong, I created a function
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[266]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -3778,7 +3780,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[267]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">salary</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">*</span> <span class="mf">1e7</span><span class="p">]</span>
@@ -3792,7 +3794,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[267]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[49]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -3859,7 +3861,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[268]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">bonus</span> <span class="o">&gt;</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="mf">1e8</span><span class="p">]</span>
@@ -3873,7 +3875,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[268]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -3950,7 +3952,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[269]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Remove error in data</span>
@@ -3967,7 +3969,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[269]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -4001,7 +4003,7 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[270]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -4018,11 +4020,11 @@ FeLgMDOzQv4/vS9UcphCmzQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[271]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
-<span class="n">visualise_features</span><span class="p">(</span><span class="s2">&quot;salary&quot;</span><span class="p">,</span> <span class="s2">&quot;bonus&quot;</span><span class="p">,</span> <span class="s2">&quot;Salary vs. Bonus without Outliers&quot;</span><span class="p">)</span>
+<span class="n">visualise_pair_features</span><span class="p">(</span><span class="s2">&quot;salary&quot;</span><span class="p">,</span> <span class="s2">&quot;bonus&quot;</span><span class="p">,</span> <span class="s2">&quot;Salary vs. Bonus without Outliers&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -4216,7 +4218,7 @@ ERFJhAqKiIgkQgVFREQSoYIiIiKJUEEREZFE/H8dl9fhoZCK7QAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[272]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -5722,7 +5724,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[273]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -5739,7 +5741,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[274]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -5756,7 +5758,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[275]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;condition1&#39;</span><span class="p">]</span> <span class="o">&lt;&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_payments&#39;</span><span class="p">])</span>
@@ -5770,7 +5772,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[275]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[57]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -5795,7 +5797,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[276]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;condition1&#39;</span><span class="p">,</span> <span class="s1">&#39;total_payments&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">]]</span>
@@ -5809,7 +5811,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[276]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[58]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -5845,7 +5847,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[277]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -5861,7 +5863,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[277]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[59]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -5942,7 +5944,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[278]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;BELFER ROBERT&#39;</span><span class="p">][</span><span class="s1">&#39;deferral_payments&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -5963,7 +5965,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[279]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -5986,7 +5988,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[279]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[61]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -6032,7 +6034,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[280]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6047,7 +6049,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[281]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;condition2&#39;</span><span class="p">]</span> <span class="o">&lt;&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_stock_value&#39;</span><span class="p">])</span>
@@ -6061,7 +6063,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[281]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[63]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -6076,7 +6078,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[282]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6092,7 +6094,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[282]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[64]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -6147,7 +6149,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[283]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;BELFER ROBERT&#39;</span><span class="p">][</span><span class="s1">&#39;restricted_stock&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">44093</span>
@@ -6167,7 +6169,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[284]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6189,7 +6191,7 @@ This is a small snapshot of how the file looks like:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[284]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[66]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -6251,7 +6253,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[285]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### Task 3: Create new feature(s)</span>
@@ -6284,7 +6286,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[286]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6314,7 +6316,7 @@ This is a small snapshot of how the file looks like:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[288]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6323,7 +6325,7 @@ This is a small snapshot of how the file looks like:</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">visualise_features</span><span class="p">(</span><span class="s2">&quot;fraction_from_poi&quot;</span><span class="p">,</span> <span class="s2">&quot;fraction_to_poi&quot;</span><span class="p">,</span> <span class="s2">&quot;Fraction from POI vs. Fraction to POI&quot;</span><span class="p">)</span>
+<span class="n">visualise_pair_features</span><span class="p">(</span><span class="s2">&quot;fraction_from_poi&quot;</span><span class="p">,</span> <span class="s2">&quot;fraction_to_poi&quot;</span><span class="p">,</span> <span class="s2">&quot;Fraction from POI vs. Fraction to POI&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -6537,7 +6539,7 @@ RBJRABERkUQUQEREJJH/A7frf+ZiYpznAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[289]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6580,7 +6582,7 @@ RBJRABERkUQUQEREJJH/A7frf+ZiYpznAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[290]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">skb</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">)</span>
@@ -6639,7 +6641,7 @@ RBJRABERkUQUQEREJJH/A7frf+ZiYpznAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[298]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -6659,7 +6661,7 @@ RBJRABERkUQUQEREJJH/A7frf+ZiYpznAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[298]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -6674,7 +6676,7 @@ RBJRABERkUQUQEREJJH/A7frf+ZiYpznAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[292]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sss</span> <span class="o">=</span> <span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
@@ -7135,13 +7137,23 @@ feature no. 9: fraction_to_poi (0.0) (0.228859619021)
 <p>Accuracy 85.8% means "out of all my predictions, I can be sure 85.8% are correct", but then since the number of POIs are much less than non-POIs, we can just predict all as non-POIs and we will get very good accuracy.</p>
 <p>Therefore it is not the most important metris here, and can even be misleading.</p>
 <p><strong>The most important metrics are precision and recall. Precision is 0.41772 &gt; 0.3 . However, Recall is 0.165 &lt; 0.3. It means that in most of the cases that random forest predict is POI is really POI, but it also misses a lot of POI during prediction. That's why we have low F1 score too.</strong></p>
+<p>Therefore the best algorithm is :</p>
+<div class="highlight"><pre><span></span><span class="n">pipeline2</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s2">&quot;kbest&quot;</span><span class="p">,</span> <span class="n">skb</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">,</span> <span class="n">dt</span> <span class="p">)])</span>
+<span class="n">params2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;kbest__k&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span>
+           <span class="s2">&quot;dt__min_samples_split&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+           <span class="s2">&quot;dt__min_samples_leaf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span>
+           <span class="s2">&quot;dt__criterion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;entropy&quot;</span><span class="p">]}</span>
+
+<span class="n">gs</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline2</span><span class="p">,</span> <span class="n">params2</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">sss</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">)</span>
+<span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">hide_me</span>
@@ -7149,11 +7161,43 @@ feature no. 9: fraction_to_poi (0.0) (0.228859619021)
 <span class="c1">### check your results. You do not need to change anything below, but make sure</span>
 <span class="c1">### that the version of poi_id.py that you submit can be run on its own and</span>
 <span class="c1">### generates the necessary .pkl files for validating your results.</span>
+<span class="n">pipeline2</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s2">&quot;kbest&quot;</span><span class="p">,</span> <span class="n">skb</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">,</span> <span class="n">dt</span> <span class="p">)])</span>
+<span class="n">params2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;kbest__k&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span>
+           <span class="s2">&quot;dt__min_samples_split&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+           <span class="s2">&quot;dt__min_samples_leaf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span>
+           <span class="s2">&quot;dt__criterion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;entropy&quot;</span><span class="p">]}</span>
 
+<span class="n">gs</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline2</span><span class="p">,</span> <span class="n">params2</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">sss</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">)</span>
+<span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">print</span> <span class="s2">&quot;Tester Classification report&quot;</span>
+<span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;dt&quot;</span><span class="p">],</span> <span class="n">data_dict</span><span class="p">,</span> <span class="n">features_list</span><span class="p">)</span>
 <span class="n">dump_classifier_and_data</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">,</span> <span class="n">features_list</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Tester Classification report
+DecisionTreeClassifier(class_weight=None, criterion=&apos;entropy&apos;, max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=9,
+            min_samples_split=6, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter=&apos;best&apos;)
+	Accuracy: 0.86173	Precision: 0.47255	Recall: 0.31850	F1: 0.38053	F2: 0.34071
+	Total predictions: 15000	True positives:  637	False positives:  711	False negatives: 1363	True negatives: 12289
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -7168,9 +7212,14 @@ Having high accuracy is not sufficient enough, we need to have a good precision 
 In terms of precision and recall, decision tree algorithm performs the best in indentifying POI.
 <strong>Summary of decision tree algoritm:</strong></p>
 <ul>
-<li><strong>GridSearchCV determined that the best parameters for this algorithm is <code>{'min_samples_split': 6, 'criterion': 'entropy', 'min_samples_leaf': 9}</code></strong></li>
-<li><strong>Precision is 0.4786</strong></li>
-<li><strong>Recall is 0.38619</strong></li>
+<li><strong>GridSearchCV determined that the best parameters for this algorithm is </strong>
+<pre><code>{"kbest__k": [9],
+"dt__min_samples_split": [6],
+"dt__min_samples_leaf": [9],
+"dt__criterion": ["entropy"]}</code></pre>
+</li>
+<li><strong>Precision is 0.47255</strong></li>
+<li><strong>Recall is 0.3185</strong></li>
 <li><strong>Due to having set up a pipeline with SelectKBest, I can identify the number features were used are 9 features: total_stock_value, exercised_stock_options, long_term_incentive, deferred_income, bonus, total_payments, fraction_to_poi, bonus_salary_ratio, salary.</strong></li>
 <li><strong>Total Stock Value and Exercised Stock Options are two most important features with decision tree classification</strong></li>
 </ul>

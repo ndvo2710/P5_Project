@@ -7,6 +7,7 @@ sys.path.append("../tools/")
 
 from feature_format import featureFormat, targetFeatureSplit
 from tester import dump_classifier_and_data
+from tester import test_classifier
 
 ### Task 1: Select what features you'll use.
 ### features_list is a list of strings, each of which is a feature name.
@@ -140,6 +141,7 @@ params4 = {"kbest__k": range(5, 10),
 
 sss = StratifiedShuffleSplit(labels, 100, test_size=0.3, random_state=60)
 
+
 ###################################
 ####### K Best + Naive Bayes
 ###################################
@@ -150,7 +152,7 @@ gs.fit(features, labels)
 
 clf = gs.best_estimator_
 
-from tester import test_classifier
+
 
 print "Tester Classification report"
 test_classifier(clf.named_steps["nb"], data_dict, features_list)
@@ -195,7 +197,9 @@ indices = np.argsort(importances)[::-1]
 for i in range(len(feature_names)):
     print "feature no. {}: {} ({}) ({})".format(i+1, feature_names[indices[i]], importances[indices[i]], scores[indices[i]])
 
-
+###############
+## Add Scaling
+##############
 
 from sklearn.preprocessing import MinMaxScaler
 scale = MinMaxScaler()
@@ -288,6 +292,41 @@ scores = [clf.named_steps['kbest'].scores_[i + 1] for i in features_used]
 #print 'Scores: ', scores
 importances = [clf.named_steps['rf'].feature_importances_[i+1] for i in features_used]
 #print 'Importance: ', importances
+indices = np.argsort(importances)[::-1]
+#print 'Indices: ', indices
+for i in range(len(feature_names)):
+    print "feature no. {}: {} ({}) ({})".format(i+1, feature_names[indices[i]], importances[indices[i]], scores[indices[i]])
+
+
+
+##########################################
+####### Final Algorithm For This Project:
+#######    Decision Tree
+#########################################
+pipeline2 = Pipeline([("kbest", skb), ("dt", dt )])
+params2 = {"kbest__k": [9],
+           "dt__min_samples_split": [6],
+           "dt__min_samples_leaf": [9],
+           "dt__criterion": ["entropy"]}
+
+gs = GridSearchCV(pipeline2, params2, n_jobs=-1, cv=sss, scoring="f1")
+gs.fit(features, labels)
+clf= gs.best_estimator_
+print "Tester Classification report"
+test_classifier(clf.named_steps["dt"], data_dict, features_list)
+
+features_used = gs.best_estimator_.named_steps["kbest"].get_support(indices=True)
+print "A total of %d features were used" % len(features_used)
+#Note 1: You use 'features_list[i+1]', instead of 'features_list[i]',
+#because the first feature in that list is 'poi'
+#which you didn't include in the variable 'features'
+feature_names = [features_list[i + 1] for i in features_used]
+#print "The features used are:", feature_names
+scores = [clf.named_steps['kbest'].scores_[i + 1] for i in features_used]
+#print 'Scores: ', scores
+importances = [clf.named_steps['dt'].feature_importances_[i+1] for i in features_used]
+#print 'Importance: ', importances
+import numpy as np
 indices = np.argsort(importances)[::-1]
 #print 'Indices: ', indices
 for i in range(len(feature_names)):
