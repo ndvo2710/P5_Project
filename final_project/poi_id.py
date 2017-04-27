@@ -151,9 +151,6 @@ gs = GridSearchCV(pipeline1, params1, n_jobs=-1, cv=sss)
 gs.fit(features, labels)
 
 clf = gs.best_estimator_
-
-
-
 print "Tester Classification report"
 test_classifier(clf.named_steps["nb"], data_dict, features_list)
 
@@ -270,7 +267,6 @@ for i in range(len(feature_names)):
 ###################################
 ####### K-Best + Random Forest:
 ###################################
-
 pipeline3 = Pipeline([("kbest", skb), ("rf", rf )])
 params3 = {"kbest__k": range(5, 10),
            "rf__max_depth": [None, 5, 10],
@@ -339,4 +335,4 @@ for i in range(len(feature_names)):
 ### that the version of poi_id.py that you submit can be run on its own and
 ### generates the necessary .pkl files for validating your results.
 
-dump_classifier_and_data(clf, data_dict, features_list)
+dump_classifier_and_data(clf.named_steps["dt"], data_dict, features_list)
